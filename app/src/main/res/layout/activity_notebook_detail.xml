@@ -7,23 +7,13 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:orientation="vertical"
-    tools:context="com.example.lunatic.notebookcompare.NotebookPage">
+    tools:context="com.example.lunatic.notebookcompare.NotebookDetail">
 
-    <ListView
-        android:id="@+id/listview"
+    <ImageView
         android:layout_width="wrap_content"
-        android:layout_height="417dp">
-    </ListView>
-
-    <Button
-        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#42A5F5"
-        android:text="Compare"
-        android:id="@+id/btnCompare"
-        android:layout_alignParentBottom="true"
+        android:id="@+id/apple1"
+        android:src="@drawable/appleair11"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
-
-
 </RelativeLayout>

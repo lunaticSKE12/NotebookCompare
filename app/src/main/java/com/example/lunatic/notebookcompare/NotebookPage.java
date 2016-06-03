@@ -1,7 +1,10 @@
 package com.example.lunatic.notebookcompare;
 
 import android.content.Context;
+import android.content.Intent;
 import android.media.Image;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,11 +17,13 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageView;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class NotebookPage extends AppCompatActivity {
@@ -29,21 +34,53 @@ public class NotebookPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notebook_page);
-        ListView lv = (ListView) findViewById(R.id.listview);
+        String[] notebook ={
+                "APPLE-MacBook-Air-11-[Early-2015]-256GB", "APPLE-MacBook-Air-13-[Early-2015]-256GB",
+                "APPLE-MacBook-Pro-Retina-13-[Early-2015]-256GB", "APPLE-MacBook-Pro-Retina-13-[Early-2015]-512GB.",
+                "ACER ASPIRE V3-575G","ACER Aspire E5-574G","ACER Aspire E5-573G","Asus VM590UB",
+                "ASUS ZENBOOK UX305UA","ASUS A550VX","DELL Inspiron N7359","DELL Inspiron N5459",
+                "DELL Inspiron 5559","DELL Vostro V5459","HP Pavilion Gaming 15","HP Pavilion 14",
+                "HP Pavilion Touchsmart 14","MSI CX62-6QD", "MSI CX62-6QD", "MSI GL62 6QD","LENOVO ThinkPad Edge E460",
+                "LENOVO Y5070", "LENOVO IdeaPad 700", "LENOVO ThinkPad Edge E460"
+
+        };
+
+        ListAdapter theAdapter = new MyAdapter(this, notebook);
+        // ListViews display data in a scrollable list
+        ListView theListView = (ListView) findViewById(R.id.listview);
+        // Tells the ListView what data to use
+        theListView.setAdapter(theAdapter);
+
+        theListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String notebookSelect = "You selected " + String.valueOf(parent.getItemAtPosition(position));
+                Toast.makeText(NotebookPage.this, notebookSelect, Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+        /*ListView lv = (ListView) findViewById(R.id.listview);
         generateListContent();
         lv.setAdapter(new MyListAdapter(this, R.layout.list_item, data));
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(NotebookPage.this, "List item was clicked at " + position, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(NotebookPage.this, "List item was clicked at " + position, Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(view.getContext(), NotebookDetail.class);
+                startActivityForResult(intent, 0);
+
             }
-        });
+        });*/
     }
 
+
+
     private void generateListContent(){
-        for(int i = 0; i < 55; i++){
-            data.add("This is row number " + i);
+        for(int i = 0; i < 2; i++){
+            data.add("macbook air 11");
         }
+
     }
 
     public boolean onCreateOptionMenu(Menu menu){
@@ -67,7 +104,7 @@ public class NotebookPage extends AppCompatActivity {
 
     }
 
-    private class MyListAdapter extends ArrayAdapter<String>{
+    /*private class MyListAdapter extends ArrayAdapter<String>{
         private int layout;
 
         public MyListAdapter(Context context, int resource, List<String> objects) {
@@ -90,6 +127,7 @@ public class NotebookPage extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         Toast.makeText(getContext(), "Button was clicked for list item " + position, Toast.LENGTH_SHORT).show();
+
                     }
                 });
                 convertView.setTag(viewHolder);
@@ -107,21 +145,9 @@ public class NotebookPage extends AppCompatActivity {
         ImageView thumbnail;
         TextView title;
         Button button;
-    }
-
-
+    }*/
 
 
 
 
 }
-
-
-
-
-
-
-
-
-
-
