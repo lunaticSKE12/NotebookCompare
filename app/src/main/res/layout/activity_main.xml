@@ -25,22 +25,11 @@
         android:layout_height="50dp"
         android:text="Notebook"
         android:id="@+id/btnNotebook"
-        android:layout_marginTop="25dp"
-        android:layout_below="@+id/imageView"
-        android:layout_centerHorizontal="true"
         android:background="#42A5F5"
-        />
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="67dp" />
 
-    <Button
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:text="Search Notebook"
-        android:id="@+id/btnSearchNotebook"
-        android:layout_marginTop="15dp"
-        android:layout_below="@+id/btnNotebook"
-        android:layout_alignLeft="@+id/btnNotebook"
-        android:layout_alignStart="@+id/btnNotebook"
-        android:background="#42A5F5"/>
 
 
 

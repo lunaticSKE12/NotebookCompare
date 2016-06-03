@@ -21,7 +21,7 @@ public class MyAdapter extends ArrayAdapter<String> {
         LayoutInflater theInflater = LayoutInflater.from(getContext());
         View theView = theInflater.inflate(R.layout.list_item, parent, false);
         String notebook = getItem(position);
-        TextView theTextView = (TextView) theView.findViewById(R.id.textView1);
+        TextView theTextView = (TextView) theView.findViewById(R.id.txtitem);
 
         theTextView.setText(notebook);
         ImageView theimageView = (ImageView) theView.findViewById(R.id.list_item_thumbnail);

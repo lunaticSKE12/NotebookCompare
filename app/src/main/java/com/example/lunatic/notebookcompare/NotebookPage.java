@@ -7,6 +7,8 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -16,40 +18,76 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class NotebookPage extends AppCompatActivity {
 
-    private ArrayList<String> data = new ArrayList<String>();
+    String[] notebooks;
+    ArrayList<String> listItems;
+    ArrayAdapter<String> adapter;
+    EditText editText;
+    ListView theListView;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notebook_page);
-        String[] notebook ={
-                "APPLE-MacBook-Air-11-[Early-2015]-256GB", "APPLE-MacBook-Air-13-[Early-2015]-256GB",
-                "APPLE-MacBook-Pro-Retina-13-[Early-2015]-256GB", "APPLE-MacBook-Pro-Retina-13-[Early-2015]-512GB.",
-                "ACER ASPIRE V3-575G","ACER Aspire E5-574G","ACER Aspire E5-573G","Asus VM590UB",
-                "ASUS ZENBOOK UX305UA","ASUS A550VX","DELL Inspiron N7359","DELL Inspiron N5459",
-                "DELL Inspiron 5559","DELL Vostro V5459","HP Pavilion Gaming 15","HP Pavilion 14",
-                "HP Pavilion Touchsmart 14","MSI CX62-6QD", "MSI CX62-6QD", "MSI GL62 6QD","LENOVO ThinkPad Edge E460",
-                "LENOVO Y5070", "LENOVO IdeaPad 700", "LENOVO ThinkPad Edge E460"
+        theListView=(ListView)findViewById(R.id.listview);
 
-        };
+        editText=(EditText)findViewById(R.id.txtsearch);
 
-        ListAdapter theAdapter = new MyAdapter(this, notebook);
-        // ListViews display data in a scrollable list
-        ListView theListView = (ListView) findViewById(R.id.listview);
-        // Tells the ListView what data to use
-        theListView.setAdapter(theAdapter);
+        initList();
+
+
+        editText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                if(s.toString().equals("")){
+
+                    // reset listview
+
+                    initList();
+
+                }
+
+                else{
+
+                    // perform search
+
+                    searchItem(s.toString());
+
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+
+
+
+
+
 
         theListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -74,14 +112,46 @@ public class NotebookPage extends AppCompatActivity {
         });*/
     }
 
+    public void searchItem(String textToSearch){
 
+        for(String item:notebooks){
 
-    private void generateListContent(){
-        for(int i = 0; i < 2; i++){
-            data.add("macbook air 11");
+            if(!item.contains(textToSearch)){
+
+                listItems.remove(item);
+
+            }
+
         }
 
+        adapter.notifyDataSetChanged();
+
     }
+
+
+    public void initList(){
+        notebooks = new String[]{
+                "APPLE-MacBook-Air-11-[Early-2015]-256GB", "APPLE-MacBook-Air-13-[Early-2015]-256GB",
+                "APPLE-MacBook-Pro-Retina-13-[Early-2015]-256GB", "APPLE-MacBook-Pro-Retina-13-[Early-2015]-512GB.",
+                "ACER ASPIRE V3-575G","ACER Aspire E5-574G","ACER Aspire E5-573G","Asus VM590UB",
+                "ASUS ZENBOOK UX305UA","ASUS A550VX","DELL Inspiron N7359","DELL Inspiron N5459",
+                "DELL Inspiron 5559","DELL Vostro V5459","HP Pavilion Gaming 15","HP Pavilion 14",
+                "HP Pavilion Touchsmart 14","MSI CX62-6QD", "MSI CX62-6QD", "MSI GL62 6QD","LENOVO ThinkPad Edge E460",
+                "LENOVO Y5070", "LENOVO IdeaPad 700", "LENOVO ThinkPad Edge E460"
+
+        };
+        listItems=new ArrayList<>(Arrays.asList(notebooks));
+
+        adapter=new ArrayAdapter<String>(this,
+                R.layout.list_item, R.id.txtitem, listItems);
+
+        theListView.setAdapter(adapter);
+
+
+
+    }
+
+
 
     public boolean onCreateOptionMenu(Menu menu){
         // Inflate the menu; this adds items to the action bar if it is present.

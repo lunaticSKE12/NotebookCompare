@@ -22,13 +22,6 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".Search">
-            <intent-filter>
-                <action android:name="com.example.lunatic.notebookcompare.Search" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
         <activity android:name=".NotebookDetail"></activity>
     </application>
 
