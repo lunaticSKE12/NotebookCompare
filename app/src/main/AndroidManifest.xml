@@ -32,7 +32,13 @@
         <activity android:name=".ACER_Aspire_E5_573G" />
         <activity android:name=".Asus_VM590UB" />
         <activity android:name=".ASUS_ZENBOOK_UX305UA" />
-        <activity android:name=".ASUS_A550VX"></activity>
+        <activity android:name=".ASUS_A550VX" />
+        <activity android:name=".DELL_Inspiron_N7359" />
+        <activity android:name=".DELL_Inspiron_N5459" />
+        <activity android:name=".DELL_Inspiron_5559" />
+        <activity android:name=".DELL_Vostro_V5459" />
+        <activity android:name=".HP_Pavilion_Gaming_15" />
+        <activity android:name=".HP_Pavilion_Star_Wars_15"></activity>
     </application>
 
 </manifest>

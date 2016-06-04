@@ -37,7 +37,7 @@ public class NotebookPage extends AppCompatActivity {
             "APPLE_MacBook_Pro13_256GB", "APPLE_MacBook_Pro13_512GB",
             "ACER_ASPIRE_V3_575G","ACER_Aspire_E5_574G","ACER_Aspire_E5_573G","Asus_VM590UB",
             "ASUS_ZENBOOK_UX305UA","ASUS_A550VX","DELL_Inspiron_N7359","DELL_Inspiron_N5459",
-            "DELL_Inspiron_5559","DELL_Vostro_V5459","HP_Pavilion_Gaming_15","HP_Pavilion_14",
+            "DELL_Inspiron_5559","DELL_Vostro_V5459","HP_Pavilion_Gaming_15","HP_Pavilion_Star_Wars_15",
             "HP_Pavilion_Touchsmart_14","MSI_CX62_6QD", "MSI_CX62_6QD", "MSI_GL62_6QD",
             "LENOVO_ThinkPad_Edge_E460", "LENOVO_Y5070", "LENOVO_IdeaPad_700",
             "LENOVO_ThinkPad_Edge_E460"
@@ -133,6 +133,24 @@ public class NotebookPage extends AppCompatActivity {
                     case 9: Intent notebookDetail_9 = new Intent(view.getContext(), ASUS_A550VX.class);
                         startActivity(notebookDetail_9);
                         break;
+                    case 10: Intent notebookDetail_10 = new Intent(view.getContext(), DELL_Inspiron_N7359.class);
+                        startActivity(notebookDetail_10);
+                        break;
+                    case 11: Intent notebookDetail_11 = new Intent(view.getContext(), DELL_Inspiron_N5459.class);
+                        startActivity(notebookDetail_11);
+                        break;
+                    case 12: Intent notebookDetail_12 = new Intent(view.getContext(), DELL_Inspiron_5559.class);
+                        startActivity(notebookDetail_12);
+                        break;
+                    case 13: Intent notebookDetail_13 = new Intent(view.getContext(), DELL_Vostro_V5459.class);
+                        startActivity(notebookDetail_13);
+                        break;
+                    case 14: Intent notebookDetail_14 = new Intent(view.getContext(), HP_Pavilion_Gaming_15.class);
+                        startActivity(notebookDetail_14);
+                        break;
+                    case 15: Intent notebookDetail_15 = new Intent(view.getContext(), HP_Pavilion_Star_Wars_15.class);
+                        startActivity(notebookDetail_15);
+                        break;
 
 
 
@@ -178,7 +196,7 @@ public class NotebookPage extends AppCompatActivity {
                 "APPLE_MacBook_Pro13_256GB", "APPLE_MacBook_Pro13_512GB",
                 "ACER_ASPIRE_V3_575G","ACER_Aspire_E5_574G","ACER_Aspire_E5_573G","Asus_VM590UB",
                 "ASUS_ZENBOOK_UX305UA","ASUS_A550VX","DELL_Inspiron_N7359","DELL_Inspiron_N5459",
-                "DELL_Inspiron_5559","DELL_Vostro_V5459","HP_Pavilion_Gaming_15","HP_Pavilion_14",
+                "DELL_Inspiron_5559","DELL_Vostro_V5459","HP_Pavilion_Gaming_15","HP_Pavilion_Star_Wars_15",
                 "HP_Pavilion_Touchsmart_14","MSI_CX62_6QD", "MSI_CX62_6QD", "MSI_GL62_6QD",
                 "LENOVO_ThinkPad_Edge_E460", "LENOVO_Y5070", "LENOVO_IdeaPad_700",
                 "LENOVO_ThinkPad_Edge_E460"
