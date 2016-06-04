@@ -20,10 +20,80 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="apple air 11"
-        android:id="@+id/appleair11_txt"
-        android:layout_below="@+id/appleair11"
-        android:layout_alignLeft="@+id/appleair11"
-        android:layout_alignStart="@+id/appleair11" />
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Name : APPLE_MacBook_Air11_256GB"
+        android:id="@+id/nameTxT"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="CPU : Intel Core i5-5250U (1.60 GHz, 3 MB L3 Cache, up to 2.70)"
+        android:id="@+id/cpuTxt"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/nameTxT"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Graphic Card : Intel HD Graphics 6000"
+        android:id="@+id/graphicCardTxt"
+        android:layout_below="@+id/cpuTxt"
+        android:layout_alignLeft="@+id/cpuTxt"
+        android:layout_alignStart="@+id/cpuTxt"
+        android:layout_marginTop="10dp" />
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Size : 11.6 inch (1366x768) HD"
+        android:id="@+id/sizeTxt"
+        android:layout_below="@+id/graphicCardTxt"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Memory : 4 GB DDR3"
+        android:id="@+id/memoryTxt"
+        android:layout_below="@+id/sizeTxt"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Hard Disk : 256 GB SSD"
+        android:id="@+id/hardDiskTxT"
+        android:layout_below="@+id/memoryTxt"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="price : 37,900 บาท"
+        android:id="@+id/priceTxt"
+        android:layout_below="@+id/hardDiskTxT"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp" />
+
 </RelativeLayout>

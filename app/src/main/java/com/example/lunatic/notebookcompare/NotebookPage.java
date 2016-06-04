@@ -162,8 +162,7 @@ public class NotebookPage extends AppCompatActivity {
         };
         listItems=new ArrayList<>(Arrays.asList(notebooks));
 
-        adapter=new ArrayAdapter<String>(this,
-                R.layout.list_item, R.id.txtitem, listItems);
+        adapter=new ArrayAdapter<String>(this,R.layout.list_item, R.id.txtitem, listItems);
 
         theListView.setAdapter(adapter);
 
