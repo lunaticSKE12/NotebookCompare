@@ -112,6 +112,30 @@ public class NotebookPage extends AppCompatActivity {
                     case 2: Intent notebookDetail_2 = new Intent(view.getContext(), APPLE_MacBook_Pro13_256GB.class);
                             startActivity(notebookDetail_2);
                             break;
+                    case 3: Intent notebookDetail_3 = new Intent(view.getContext(), APPLE_MacBook_Pro13_512GB.class);
+                            startActivity(notebookDetail_3);
+                            break;
+                    case 4: Intent notebookDetail_4 = new Intent(view.getContext(), ACER_ASPIRE_V3_575G.class);
+                            startActivity(notebookDetail_4);
+                            break;
+                    case 5: Intent notebookDetail_5 = new Intent(view.getContext(), ACER_Aspire_E5_574G.class);
+                        startActivity(notebookDetail_5);
+                        break;
+                    case 6: Intent notebookDetail_6 = new Intent(view.getContext(), ACER_Aspire_E5_573G.class);
+                        startActivity(notebookDetail_6);
+                        break;
+                    case 7: Intent notebookDetail_7 = new Intent(view.getContext(), Asus_VM590UB.class);
+                        startActivity(notebookDetail_7);
+                        break;
+                    case 8: Intent notebookDetail_8 = new Intent(view.getContext(), ASUS_ZENBOOK_UX305UA.class);
+                        startActivity(notebookDetail_8);
+                        break;
+                    case 9: Intent notebookDetail_9 = new Intent(view.getContext(), ASUS_A550VX.class);
+                        startActivity(notebookDetail_9);
+                        break;
+
+
+
                 }
 
             }

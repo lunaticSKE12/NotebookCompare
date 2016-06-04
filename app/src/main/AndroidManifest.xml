@@ -25,7 +25,14 @@
         <activity android:name=".NotebookDetail" />
         <activity android:name=".APPLE_MacBook_Air11_256GB" />
         <activity android:name=".APPLE_MacBook_Pro13_256GB" />
-        <activity android:name=".APPLE_MacBook_Air13_256GB"></activity>
+        <activity android:name=".APPLE_MacBook_Air13_256GB" />
+        <activity android:name=".APPLE_MacBook_Pro13_512GB" />
+        <activity android:name=".ACER_ASPIRE_V3_575G" />
+        <activity android:name=".ACER_Aspire_E5_574G" />
+        <activity android:name=".ACER_Aspire_E5_573G" />
+        <activity android:name=".Asus_VM590UB" />
+        <activity android:name=".ASUS_ZENBOOK_UX305UA" />
+        <activity android:name=".ASUS_A550VX"></activity>
     </application>
 
 </manifest>
