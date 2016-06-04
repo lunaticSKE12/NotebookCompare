@@ -22,7 +22,10 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".NotebookDetail"></activity>
+        <activity android:name=".NotebookDetail" />
+        <activity android:name=".APPLE_MacBook_Air11_256GB" />
+        <activity android:name=".APPLE_MacBook_Pro13_256GB" />
+        <activity android:name=".APPLE_MacBook_Air13_256GB"></activity>
     </application>
 
 </manifest>

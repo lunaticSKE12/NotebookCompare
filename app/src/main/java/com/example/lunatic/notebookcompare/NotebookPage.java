@@ -32,7 +32,17 @@ import java.util.List;
 
 public class NotebookPage extends AppCompatActivity {
 
-    String[] notebooks;
+    String[] notebooks = new String[]{
+            "APPLE_MacBook_Air11_256GB", "APPLE_MacBook_Air13_256GB",
+            "APPLE_MacBook_Pro13_256GB", "APPLE_MacBook_Pro13_512GB",
+            "ACER_ASPIRE_V3_575G","ACER_Aspire_E5_574G","ACER_Aspire_E5_573G","Asus_VM590UB",
+            "ASUS_ZENBOOK_UX305UA","ASUS_A550VX","DELL_Inspiron_N7359","DELL_Inspiron_N5459",
+            "DELL_Inspiron_5559","DELL_Vostro_V5459","HP_Pavilion_Gaming_15","HP_Pavilion_14",
+            "HP_Pavilion_Touchsmart_14","MSI_CX62_6QD", "MSI_CX62_6QD", "MSI_GL62_6QD",
+            "LENOVO_ThinkPad_Edge_E460", "LENOVO_Y5070", "LENOVO_IdeaPad_700",
+            "LENOVO_ThinkPad_Edge_E460"
+
+    };
     ArrayList<String> listItems;
     ArrayAdapter<String> adapter;
     EditText editText;
@@ -84,16 +94,25 @@ public class NotebookPage extends AppCompatActivity {
         });
 
 
-
-
-
-
-
         theListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String notebookSelect = "You selected " + String.valueOf(parent.getItemAtPosition(position));
                 Toast.makeText(NotebookPage.this, notebookSelect, Toast.LENGTH_SHORT).show();
+                /*Intent intent = new Intent(view.getContext(), APPLE_MacBook_Air11_256GB.class);
+                startActivityForResult(intent, 0);*/
+
+                switch (position){
+                    case 0: Intent notebookDetail_0 = new Intent(view.getContext(), APPLE_MacBook_Air11_256GB.class);
+                            startActivity(notebookDetail_0);
+                            break;
+                    case 1: Intent notebookDetail_1 = new Intent(view.getContext(), APPLE_MacBook_Air13_256GB.class);
+                            startActivity(notebookDetail_1);
+                            break;
+                    case 2: Intent notebookDetail_2 = new Intent(view.getContext(), APPLE_MacBook_Pro13_256GB.class);
+                            startActivity(notebookDetail_2);
+                            break;
+                }
 
             }
         });
@@ -131,13 +150,14 @@ public class NotebookPage extends AppCompatActivity {
 
     public void initList(){
         notebooks = new String[]{
-                "APPLE-MacBook-Air-11-[Early-2015]-256GB", "APPLE-MacBook-Air-13-[Early-2015]-256GB",
-                "APPLE-MacBook-Pro-Retina-13-[Early-2015]-256GB", "APPLE-MacBook-Pro-Retina-13-[Early-2015]-512GB.",
-                "ACER ASPIRE V3-575G","ACER Aspire E5-574G","ACER Aspire E5-573G","Asus VM590UB",
-                "ASUS ZENBOOK UX305UA","ASUS A550VX","DELL Inspiron N7359","DELL Inspiron N5459",
-                "DELL Inspiron 5559","DELL Vostro V5459","HP Pavilion Gaming 15","HP Pavilion 14",
-                "HP Pavilion Touchsmart 14","MSI CX62-6QD", "MSI CX62-6QD", "MSI GL62 6QD","LENOVO ThinkPad Edge E460",
-                "LENOVO Y5070", "LENOVO IdeaPad 700", "LENOVO ThinkPad Edge E460"
+                "APPLE_MacBook_Air11_256GB", "APPLE_MacBook_Air13_256GB",
+                "APPLE_MacBook_Pro13_256GB", "APPLE_MacBook_Pro13_512GB",
+                "ACER_ASPIRE_V3_575G","ACER_Aspire_E5_574G","ACER_Aspire_E5_573G","Asus_VM590UB",
+                "ASUS_ZENBOOK_UX305UA","ASUS_A550VX","DELL_Inspiron_N7359","DELL_Inspiron_N5459",
+                "DELL_Inspiron_5559","DELL_Vostro_V5459","HP_Pavilion_Gaming_15","HP_Pavilion_14",
+                "HP_Pavilion_Touchsmart_14","MSI_CX62_6QD", "MSI_CX62_6QD", "MSI_GL62_6QD",
+                "LENOVO_ThinkPad_Edge_E460", "LENOVO_Y5070", "LENOVO_IdeaPad_700",
+                "LENOVO_ThinkPad_Edge_E460"
 
         };
         listItems=new ArrayList<>(Arrays.asList(notebooks));
