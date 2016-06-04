@@ -38,9 +38,9 @@ public class NotebookPage extends AppCompatActivity {
             "ACER_ASPIRE_V3_575G","ACER_Aspire_E5_574G","ACER_Aspire_E5_573G","Asus_VM590UB",
             "ASUS_ZENBOOK_UX305UA","ASUS_A550VX","DELL_Inspiron_N7359","DELL_Inspiron_N5459",
             "DELL_Inspiron_5559","DELL_Vostro_V5459","HP_Pavilion_Gaming_15","HP_Pavilion_Star_Wars_15",
-            "HP_Pavilion_Touchsmart_14","MSI_CX62_6QD", "MSI_CX62_6QD", "MSI_GL62_6QD",
-            "LENOVO_ThinkPad_Edge_E460", "LENOVO_Y5070", "LENOVO_IdeaPad_700",
-            "LENOVO_ThinkPad_Edge_E460"
+            "HP_Pavilion_Touchsmart_14","MSI_CX62_6QD", "MSI_GP72_6QE", "MSI_GL62_6QD",
+            "LENOVO_ThinkPad_Edge_E460", "LENOVO_IdeaPad_Y700", "LENOVO_IdeaPad_700",
+            "LENOVO_ThinkPad_X260"
 
     };
     ArrayList<String> listItems;
@@ -151,6 +151,31 @@ public class NotebookPage extends AppCompatActivity {
                     case 15: Intent notebookDetail_15 = new Intent(view.getContext(), HP_Pavilion_Star_Wars_15.class);
                         startActivity(notebookDetail_15);
                         break;
+                    case 16: Intent notebookDetail_16 = new Intent(view.getContext(), HP_Pavilion_Touchsmart_14.class);
+                        startActivity(notebookDetail_16);
+                        break;
+                    case 17: Intent notebookDetail_17 = new Intent(view.getContext(), MSI_CX62_6QD.class);
+                        startActivity(notebookDetail_17);
+                        break;
+                    case 18: Intent notebookDetail_18 = new Intent(view.getContext(), MSI_GP72_6QE.class);
+                        startActivity(notebookDetail_18);
+                        break;
+                    case 19: Intent notebookDetail_19 = new Intent(view.getContext(), MSI_GL62_6QD.class);
+                        startActivity(notebookDetail_19);
+                        break;
+                    case 20: Intent notebookDetail_20 = new Intent(view.getContext(), LENOVO_ThinkPad_Edge_E460.class);
+                        startActivity(notebookDetail_20);
+                        break;
+                    case 21: Intent notebookDetail_21 = new Intent(view.getContext(), LENOVO_IdeaPad_Y700.class);
+                        startActivity(notebookDetail_21);
+                        break;
+                    case 22: Intent notebookDetail_22 = new Intent(view.getContext(), LENOVO_IdeaPad_700.class);
+                        startActivity(notebookDetail_22);
+                        break;
+                    case 23: Intent notebookDetail_23 = new Intent(view.getContext(), LENOVO_ThinkPad_X260.class);
+                        startActivity(notebookDetail_23);
+                        break;
+
 
 
 
@@ -197,9 +222,9 @@ public class NotebookPage extends AppCompatActivity {
                 "ACER_ASPIRE_V3_575G","ACER_Aspire_E5_574G","ACER_Aspire_E5_573G","Asus_VM590UB",
                 "ASUS_ZENBOOK_UX305UA","ASUS_A550VX","DELL_Inspiron_N7359","DELL_Inspiron_N5459",
                 "DELL_Inspiron_5559","DELL_Vostro_V5459","HP_Pavilion_Gaming_15","HP_Pavilion_Star_Wars_15",
-                "HP_Pavilion_Touchsmart_14","MSI_CX62_6QD", "MSI_CX62_6QD", "MSI_GL62_6QD",
-                "LENOVO_ThinkPad_Edge_E460", "LENOVO_Y5070", "LENOVO_IdeaPad_700",
-                "LENOVO_ThinkPad_Edge_E460"
+                "HP_Pavilion_Touchsmart_14","MSI_CX62_6QD", "MSI_GP72_6QE", "MSI_GL62_6QD",
+                "LENOVO_ThinkPad_Edge_E460", "LENOVO_IdeaPad_Y700", "LENOVO_IdeaPad_700",
+                "LENOVO_ThinkPad_X260"
 
         };
         listItems=new ArrayList<>(Arrays.asList(notebooks));

@@ -38,7 +38,15 @@
         <activity android:name=".DELL_Inspiron_5559" />
         <activity android:name=".DELL_Vostro_V5459" />
         <activity android:name=".HP_Pavilion_Gaming_15" />
-        <activity android:name=".HP_Pavilion_Star_Wars_15"></activity>
+        <activity android:name=".HP_Pavilion_Star_Wars_15" />
+        <activity android:name=".HP_Pavilion_Touchsmart_14" />
+        <activity android:name=".MSI_CX62_6QD" />
+        <activity android:name=".MSI_GP72_6QE" />
+        <activity android:name=".MSI_GL62_6QD" />
+        <activity android:name=".LENOVO_ThinkPad_Edge_E460" />
+        <activity android:name=".LENOVO_IdeaPad_Y700" />
+        <activity android:name=".LENOVO_IdeaPad_700" />
+        <activity android:name=".LENOVO_ThinkPad_X260"></activity>
     </application>
 
 </manifest>
