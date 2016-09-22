@@ -30,7 +30,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class NotebookPage extends AppCompatActivity {
+public class Search extends AppCompatActivity {
 
     String[] notebooks = new String[]{
             "apple_macbook_air11_256GB", "apple_macbook_air13_256GB",
@@ -53,39 +53,71 @@ public class NotebookPage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_notebook_page);
+        setContentView(R.layout.activity_search);
         theListView=(ListView)findViewById(R.id.listview);
 
+        editText=(EditText)findViewById(R.id.txtsearch);
 
         initList();
 
 
+        editText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                if(s.toString().equals("")){
+
+                    // reset listview
+
+                    initList();
+
+                }
+
+                else{
+
+                    // perform search
+
+                    searchItem(s.toString().toLowerCase());
+
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
 
 
         theListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String notebookSelect = "You selected " + String.valueOf(parent.getItemAtPosition(position));
-                Toast.makeText(NotebookPage.this, notebookSelect, Toast.LENGTH_SHORT).show();
+                Toast.makeText(Search.this, notebookSelect, Toast.LENGTH_SHORT).show();
                 /*Intent intent = new Intent(view.getContext(), APPLE_MacBook_Air11_256GB.class);
                 startActivityForResult(intent, 0);*/
 
                 switch (position){
                     case 0: Intent notebookDetail_0 = new Intent(view.getContext(), APPLE_MacBook_Air11_256GB.class);
-                            startActivity(notebookDetail_0);
-                            break;
+                        startActivity(notebookDetail_0);
+                        break;
                     case 1: Intent notebookDetail_1 = new Intent(view.getContext(), APPLE_MacBook_Air13_256GB.class);
-                            startActivity(notebookDetail_1);
-                            break;
+                        startActivity(notebookDetail_1);
+                        break;
                     case 2: Intent notebookDetail_2 = new Intent(view.getContext(), APPLE_MacBook_Pro13_256GB.class);
-                            startActivity(notebookDetail_2);
-                            break;
+                        startActivity(notebookDetail_2);
+                        break;
                     case 3: Intent notebookDetail_3 = new Intent(view.getContext(), APPLE_MacBook_Pro13_512GB.class);
-                            startActivity(notebookDetail_3);
-                            break;
+                        startActivity(notebookDetail_3);
+                        break;
                     case 4: Intent notebookDetail_4 = new Intent(view.getContext(), ACER_ASPIRE_V3_575G.class);
-                            startActivity(notebookDetail_4);
-                            break;
+                        startActivity(notebookDetail_4);
+                        break;
                     case 5: Intent notebookDetail_5 = new Intent(view.getContext(), ACER_Aspire_E5_574G.class);
                         startActivity(notebookDetail_5);
                         break;
@@ -152,7 +184,6 @@ public class NotebookPage extends AppCompatActivity {
             }
         });
 
-
     }
 
     public void searchItem(String textToSearch){
@@ -164,7 +195,11 @@ public class NotebookPage extends AppCompatActivity {
                 listItems.remove(item);
 
             }
+            else if(item.contains(textToSearch)){
 
+                initList();
+
+            }
         }
 
         adapter.notifyDataSetChanged();
@@ -216,9 +251,5 @@ public class NotebookPage extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
 
     }
-
-
-
-
 
 }

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -13,24 +14,33 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/imageView"
+        android:src="@drawable/hp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="41dp"
-        android:src="@drawable/hp"
-
-        />
+        android:layout_marginTop="20dp"/>
 
     <Button
         android:layout_width="250dp"
         android:layout_height="50dp"
-        android:text="Notebook"
+        android:text="search"
+        android:id="@+id/btnSearchNotebook"
+        android:background="#42A5F5"
+        android:textSize="24sp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/btnNotebook"
+        android:layout_alignStart="@+id/btnNotebook"
+        android:layout_marginBottom="20dp" />
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:text="notebook spec"
         android:id="@+id/btnNotebook"
         android:background="#42A5F5"
-        android:layout_alignParentBottom="true"
+        android:textSize="24sp"
+        android:layout_above="@+id/btnSearchNotebook"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="67dp" />
-
-
+        android:layout_marginBottom="30dp" />
 
 
 </RelativeLayout>
